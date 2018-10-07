@@ -1,0 +1,10 @@
+{
+    
+    "Menu": {
+      "home": "Home",
+      "contact": "Contact Us",
+      "client": "client",
+      "service":"services",
+      "login":"Log in"
+    }
+  }

@@ -1,0 +1,61 @@
+
+
+<div class="header_header">
+  <div class="header__heading">
+    <picture>
+    <source srcset="./assets/images/rs_logo_44_47.jpg" media="(min-width: 768px)">
+    <img srcset="./assets/images/rs_logo_157_167.jpg">
+    </picture>
+    <h2 class="large-hero__heading__text">Office tes POC...</h2>
+  </div>
+
+  <div class="header-menu">
+    <ul class="ul-links">
+      <li>
+          <button class="mat-button" routerLink="/home" routerLinkActive="active" >{{'Menu.home' | translate}}</button>
+      </li>
+      <li>
+          <button class="mat-button" mat-button [matMenuTriggerFor]="us">{{'Menu.contact' | translate}}</button>
+      </li>
+      <li>
+          <button class="mat-button" mat-button [matMenuTriggerFor]="stories">{{'Menu.service' | translate}}</button>
+      </li>
+      <li>
+          <button class="mat-button" routerLink="/gallary/" routerLinkActive="active">{{'Menu.client' | translate}}</button>
+      </li>
+    
+      <!--<li [style.visibility]=" isLoggedIn ? 'hidden' : 'visible' ">-->
+        <!--<a routerLink="../login/">LogIn</a>-->
+      <!--</li>-->
+      <li *ngIf="!isLoggedIn" >
+          <button class="mat-button" routerLink="../login/" routerLinkActive="active">{{'Menu.login' | translate}}</button>
+        </li>
+
+        <li *ngIf="isLoggedIn">
+
+            <button class="mat-button" routerLink="./" (click)="logout()" >Logout</button>
+        </li>
+
+        <li >
+
+          <mat-form-field class="mat-select">
+            <mat-select [(value)]="selected" (selectionChange)="doSomething($event)">
+              <mat-option value="en">English</mat-option>
+              <mat-option value="hn">हिंदी</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <mat-menu #stories="matMenu">
+    <button *ngIf="isAdmin" mat-menu-item routerLink="/stories/" routerLinkActive="active">create stories</button>
+    <button mat-menu-item >Schools</button>
+  </mat-menu>
+  <mat-menu #us="matMenu">
+      <button mat-menu-item routerLink="/contactus/" routerLinkActive="active">Contact Us</button>
+      <button mat-menu-item >About Us</button>
+    </mat-menu>
+    

@@ -1,0 +1,22 @@
+<h2>Register</h2>
+
+<input type="text" [(ngModel)]="email" placeholder="email">
+<input type="password" [(ngModel)]="password" placeholder="password">
+
+<button (click)="register ()">
+    Signup
+</button>
+
+
+<label for="file">Choose File</label>
+<input type="file"
+       id="file"
+       (change)="handleFileInput($event.target.files)">
+
+<button (click)="getFileUploads ()">
+    getImagesgetFileUploads
+</button>
+
+<div>
+    <img src ="https://firebasestorage.googleapis.com/v0/b/my-travel-website-6f84f.appspot.com/o/1234?alt=media&token=52215126-e67d-4aa4-83d7-3b5cf70db36c" alt="Coastal view of ocean and mountains">
+</div>
