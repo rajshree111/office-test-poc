@@ -20,6 +20,8 @@ import { GallaryComponent } from './gallary/gallary.component';
 import { CoreModule } from './core/core.module';
 import { MaterialModule } from './material.module';
 import { CookieService } from 'ngx-cookie-service';
+import { GallaryServiceService } from './gallary-service.service';
+
 
 
 import * as admin from 'firebase-admin';
@@ -31,6 +33,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './core/login/login.component';
 import { CustomCarouselComponent } from './custom-carousel/custom-carousel.component';
+import { TestComponent } from './test/test.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyA8y7brDTBunobigfd4xQWYcYHj-vUwCCM',
@@ -59,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     GallaryComponent,
     CustomCarouselComponent,
+    TestComponent,
     
   ],
   imports: [
@@ -83,7 +87,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     HttpClientModule
   ],
-  providers: [LoginComponent,PendingChangesGuard,CookieService ],
+  providers: [LoginComponent,PendingChangesGuard,CookieService, GallaryServiceService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit,  HostListener} from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { GallaryServiceService } from '../gallary-service.service';
 
 @Component({
   selector: 'app-gallary',
@@ -8,22 +9,25 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class GallaryComponent implements OnInit {
 
-  // @HostListener('window:beforeunload', ['$event'])
-  // beforeunloadHandler(event) {
-  //   console.log('...........I am called',event.eventPhase);
-  //   event.returnValue = false;
-  //   }
-// @HostListener('window:beforeunload', ['$event'])
-//     beforeunloadHandler(event) {
-//       console.log('...........I am also called',event.eventPhase);
-//       event.returnValue = false;
-//      }
+   data: any;
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
     
-  constructor(private cookieService: CookieService) { }
+    event.returnValue = false
+  }
+  constructor(private cookieService: CookieService, private gallaryServiceService: GallaryServiceService) { }
 
   ngOnInit() {
+
+  this.gallaryServiceService.getDetails().subscribe(
+    data=>{console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@'+JSON.stringify(data))
+  this.data=data}
+  );
+  console.log("#########################"+this.data);
+
     this.cookieService.set( 'Test', 'Hello World' );
-    document.getElementById("value").innerHTML = this.cookieService.get('Test');
+   // document.getElementById("value").innerHTML = this.cookieService.get('Test');
   }
 
 }

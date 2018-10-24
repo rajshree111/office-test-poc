@@ -1,5 +1,9 @@
-<h1>This is test for cookie st</h1>
 
-<label for ="name">name:</label><input id="input">
 
-<p id="value">To be changed</p>
+<div *ngIf="data else other_content">
+    <h1>{{data.name}}</h1>
+    <h2>{{data.age}}</h2>
+
+</div>
+
+<ng-template #other_content><h1>other content</h1></ng-template>
