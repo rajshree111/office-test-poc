@@ -1,2 +1,21 @@
-<app-carousel-image></app-carousel-image>
+<!-- <app-carousel-image></app-carousel-image> -->
 
+<!-- <mat-chip-list [multiple]="true">
+    <mat-chip *ngFor="let chip of chips" (click)="emitClick(chip)">{{chip}} </mat-chip>  
+</mat-chip-list> -->
+
+<!-- <mat-chip-list [multiple]="true" [selectable]="true" (click)="logThis()" >
+    <mat-chip >Papadum</mat-chip>
+    <mat-chip>Naan</mat-chip>
+    <mat-chip>Dal</mat-chip>
+  </mat-chip-list> -->
+
+  
+      <!-- <button class="mat-button" *ngFor="let chip of chips" (click)="changeTheName(chip)">
+        {{chip}}
+      </button> -->
+      <h1>barcode-sacnner</h1>
+      <barcode-scanner-livestream type="code_128" (valueChanges)="onValueChanges($event)"></barcode-scanner-livestream>
+    <div [hidden]="!barcodeValue">
+        {{barcodeValue}}
+    </div>

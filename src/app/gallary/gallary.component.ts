@@ -10,6 +10,7 @@ import { GallaryServiceService } from '../gallary-service.service';
 export class GallaryComponent implements OnInit {
 
    data: any;
+   chips: string[] = [];
 
   @HostListener('window:beforeunload', ['$event'])
   beforeunloadHandler(event) {
@@ -19,6 +20,7 @@ export class GallaryComponent implements OnInit {
   constructor(private cookieService: CookieService, private gallaryServiceService: GallaryServiceService) { }
 
   ngOnInit() {
+    this.chips = ['first', 'second'];
 
   this.gallaryServiceService.getDetails().subscribe(
     data=>{console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@'+JSON.stringify(data))
@@ -28,6 +30,10 @@ export class GallaryComponent implements OnInit {
 
     this.cookieService.set( 'Test', 'Hello World' );
    // document.getElementById("value").innerHTML = this.cookieService.get('Test');
+  }
+
+  CallThis(chips){
+ console.log('....................',chips);
   }
 
 }

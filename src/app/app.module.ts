@@ -34,6 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './core/login/login.component';
 import { CustomCarouselComponent } from './custom-carousel/custom-carousel.component';
 import { TestComponent } from './test/test.component';
+import {MatChipsModule} from '@angular/material/chips';
+import { BarecodeScannerLivestreamModule } from 'ngx-barcode-scanner';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyA8y7brDTBunobigfd4xQWYcYHj-vUwCCM',
@@ -68,6 +70,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
       BrowserAnimationsModule,
+      BarecodeScannerLivestreamModule,
     Ng2CarouselamosModule,
     AppRoutingModule,
     AngularFireAuthModule,
@@ -85,7 +88,8 @@ export function HttpLoaderFactory(http: HttpClient) {
             deps: [HttpClient]
         }
     }),
-    HttpClientModule
+    HttpClientModule,
+    MatChipsModule
   ],
   providers: [LoginComponent,PendingChangesGuard,CookieService, GallaryServiceService ],
   bootstrap: [AppComponent]

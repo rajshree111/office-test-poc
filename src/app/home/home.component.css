@@ -1,0 +1,13 @@
+.selected{
+    background-color:  green;
+}
+.not-selected{
+    background-color:  red;
+}
+
+ul li{
+    list-style: none;
+    /* height: 20px; */
+    border: 1px solid #c3c3c3;
+}
+

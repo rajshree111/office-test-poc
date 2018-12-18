@@ -7,3 +7,8 @@
 </div>
 
 <ng-template #other_content><h1>other content</h1></ng-template>
+
+
+<button class="mat-button" *ngFor="let chip of chips" (click)="CallThis(chip)">
+    {{chip}}
+  </button>

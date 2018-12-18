@@ -24,6 +24,7 @@
     "@angular/router": "^6.1.0",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
+    "@zxing/ngx-scanner": "^1.3.0",
     "angularfire2": "^5.0.0-rc.12",
     "core-js": "^2.5.4",
     "exif-js": "^2.3.0",
@@ -33,7 +34,9 @@
     "functions": "^1.0.9",
     "hammerjs": "^2.0.8",
     "ng2-carouselamos": "^3.2.0",
+    "ngx-barcode-scanner": "0.0.5",
     "ngx-cookie-service": "^1.0.10",
+    "quagga": "^0.12.1",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
